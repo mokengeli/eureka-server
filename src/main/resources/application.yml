@@ -1,0 +1,25 @@
+server:
+  port: 8761  # Le port par défaut d'Eureka Server
+
+spring:
+  application:
+    name: eureka-server  # Nom de l'application Eureka Server
+
+eureka:
+  client:
+    register-with-eureka: false  # Le serveur Eureka ne doit pas s'enregistrer lui-même
+    fetch-registry: false        # Le serveur Eureka ne doit pas récupérer la liste des services (car il est le serveur)
+  server:
+    wait-time-in-ms-when-sync-empty: 0  # Démarrer immédiatement sans attendre d'autres instances
+  instance:
+    hostname: localhost  # Le nom d'hôte du serveur Eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expose tous les endpoints Actuator pour la surveillance
+
+logging:
+  level:
+    org.springframework.cloud.netflix.eureka.server: DEBUG  # Niveau de log pour voir les événements Eureka
