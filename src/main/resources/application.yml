@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: eureka-server  # Nom de l'application Eureka Server
+  jackson:
+    time-zone: GMT+01:00
 
 eureka:
   client:
