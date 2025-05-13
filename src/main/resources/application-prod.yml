@@ -1,0 +1,28 @@
+server:
+  port: ${SERVER_PORT:8761}
+
+spring:
+  application:
+    name: eureka-server
+  jackson:
+    time-zone: ${TIME_ZONE:GMT+01:00}
+
+eureka:
+  client:
+    register-with-eureka: ${REGISTER_WITH_EUREKA:false}
+    fetch-registry: ${FETCH_REGISTRY:false}
+  server:
+    wait-time-in-ms-when-sync-empty: ${WAIT_TIME_SYNC:0}
+  instance:
+    hostname: ${EUREKA_HOSTNAME:eureka-server}
+    prefer-ip-address: ${PREFER_IP:true}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ${ACTUATOR_ENDPOINTS:*}
+
+logging:
+  level:
+    org.springframework.cloud.netflix.eureka.server: ${EUREKA_LOG_LEVEL:INFO}
