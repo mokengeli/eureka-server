@@ -21,7 +21,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: ${ACTUATOR_ENDPOINTS:*}
+        include: ${ACTUATOR_ENDPOINTS:health,info,metrics}
 
 logging:
   level:
